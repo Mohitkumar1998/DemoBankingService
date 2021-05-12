@@ -2,13 +2,9 @@ package mo20170519.fundamentals.bank.mo20170519_bank.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.assertj.core.util.Arrays;
-import org.json.JSONException;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -23,10 +19,7 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import mo20170519.fundamentals.bank.mo20170519_bank.entity.account;
-import mo20170519.fundamentals.bank.mo20170519_bank.entity.customer;
 import mo20170519.fundamentals.bank.mo20170519_bank.service.accountService;
 
 @WebMvcTest(value = accountController.class)
@@ -37,8 +30,6 @@ class accountControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
-
-	private ObjectMapper mapper = new ObjectMapper();
 
 	@Test
 	void testGetAccountById() throws Exception {
