@@ -11,16 +11,13 @@ import org.springframework.boot.context.properties.source.InvalidConfigurationPr
 
 import mo20170519.fundamentals.bank.mo20170519_bank.entity.account;
 import mo20170519.fundamentals.bank.mo20170519_bank.entity.customer;
-import mo20170519.fundamentals.bank.mo20170519_bank.repository.accountRepository;
 import mo20170519.fundamentals.bank.mo20170519_bank.repository.customerRepository;
 
 @Service
 public class customerServiceImpl implements customerService {
 	@Autowired
 	private customerRepository customerRepo;
-	@Autowired
-	private accountRepository accountRepo;
-
+	
 	@Transactional
 	public ResponseEntity<Object> addCustomer(customer customer) {
 		if(customerRepo.findById(customer.getCustomerId()).isPresent()) {
@@ -64,6 +61,7 @@ public class customerServiceImpl implements customerService {
 		savedCustomer.setName(customer.getName());
 		savedCustomer.setEmail(customer.getEmail());
 		savedCustomer.setContactNo(customer.getContactNo());
+		customerRepo.save(savedCustomer);
 		if (customerRepo.findById(savedCustomer.getCustomerId()).isPresent()) {
 			return ResponseEntity.accepted().body("Successfully updated Customer details");
 		} else

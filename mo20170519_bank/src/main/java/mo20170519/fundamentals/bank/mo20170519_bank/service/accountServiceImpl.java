@@ -90,7 +90,7 @@ public class accountServiceImpl implements accountService {
 		accountRepo.deleteById(id);
 		accounts.addAll(accountRepo.findByCustomerId(customerId));
 		customerRepo.save(thisCustomer);
-		if (customerRepo.findById(id).isPresent()) {
+		if (accountRepo.findById(id).isPresent()) {
 			return ResponseEntity.unprocessableEntity().body("Failed to delete the specified record");
 		} else
 			return ResponseEntity.ok().body("Successfully deleted specified record");
