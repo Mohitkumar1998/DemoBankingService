@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 import mo20170519.fundamentals.bank.mo20170519_bank.entity.account;
+import mo20170519.fundamentals.bank.mo20170519_bank.repository.accountRepository;
 import mo20170519.fundamentals.bank.mo20170519_bank.service.accountService;
 
 @WebMvcTest(value = accountController.class)
