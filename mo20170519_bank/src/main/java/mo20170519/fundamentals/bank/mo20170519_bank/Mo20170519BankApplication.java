@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Mo20170519BankApplication {
 
 	public static void main(String[] args) {
-		
-		//some change
+
 		SpringApplication.run(Mo20170519BankApplication.class, args);
 	}
 
